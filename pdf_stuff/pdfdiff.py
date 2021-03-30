@@ -19,16 +19,7 @@ except ModuleNotFoundError:
 
 
 def main(argv=None):
-    """Parse arguments (or use supplied `argv`) and run the script.
-
-
-    method = {xor, any}
-    dpi = 300
-    output = diff.pdf
-    """
-
-    logger.info("Hello!")  # TODO: Remove
-
+    """Parse arguments (or use supplied `argv`) and run the script."""
     # Define the argument parser
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -49,25 +40,50 @@ def main(argv=None):
         default="diff.pdf",
         help="The resulting diff of the PDFs.",
     )
-
-    # TODO: better documentation
     parser.add_argument(
         "--method",
         type=str,
         default="any",
+        choices={"any", "xor"},
         help="The method to use for visualizing differences.",
     )
     parser.add_argument(
         "--dpi",
         type=float,
-        default=300,
+        default=192,
         help="DPI (resolution) to use for comparisons.",
     )
+
+    # Set logging verbosity
+    verbosity = parser.add_mutually_exclusive_group()
+    verbosity.add_argument(
+        "-v",
+        "--verbose",
+        action="store_const",
+        const=logging.DEBUG,
+        default=logging.INFO,
+        help="Logging verbosity",
+    )
+    verbosity.add_argument(
+        "--quiet",
+        action="store_const",
+        const=logging.WARNING,
+        dest="verbose",
+        help="Logging verbosity",
+    )
+
 
     # Actually parse the arguments
     args = vars(parser.parse_args(argv))
 
-    print(args)  # TODO: Remove
+    # Set logging level
+    logger.setLevel(args["verbose"])
+
+    # Debug message for logging type
+    if "logzero" in sys.modules:
+        logger.debug("Using `logzero` for logging.")
+    else:
+        logger.debug("`logzero` unavailable, using default logging module.")
 
     # Perform the comparison
     out_doc = compare_pdfs(

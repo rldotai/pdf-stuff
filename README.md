@@ -46,3 +46,23 @@ A | B | Diff
 :--:|:---:|:---:
 ![PDF difference](resources/pandoc-list.png) | ![PDF difference](resources/cool-list.png) | ![PDF difference](resources/diff-list.png)
 
+
+# TODO
+
+Move the following from scattered notebooks into this repo:
+
+- [ ] Metadata extraction \& pretty-printing
+- [ ] Image extraction
+- [ ] Text extraction
+- [ ] OCR
+- [ ] HTML image w/ text overlay
+
+## Improvements
+
+- [ ] More options for `pdfdiff.py`
+    - Handle page ranges
+    - Omit pages that are identical
+    - Handle pages of different sizes but same aspect ratio
+    - Implement more diff algorithms
+- [ ] Add debug logging to `pdfdiff.py`
+- [ ] Image (rather than PDF) output for `pdfdiff.py`

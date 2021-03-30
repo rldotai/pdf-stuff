@@ -1,7 +1,8 @@
+# Examples
 
-# pdfdiff.py
+## pdfdiff.py
 
-
+Some example invocations:
 
 ```bash
 # Compare two PDFs -- produces `diff.pdf`
@@ -19,3 +20,5 @@ The default options should produce something like:
 A | B | Diff
 :--:|:---:|:---:
 ![PDF difference](../resources/pandoc-list.png) | ![PDF difference](../resources/cool-list.png) | ![PDF difference](../resources/diff-list.png)
+
+on the third page, with the rest being identical between the two documents.
