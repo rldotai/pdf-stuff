@@ -14,6 +14,12 @@ pip install .
 pip install --editable .
 ```
 
+You can also just run the scripts in a standalone fashion, i.e. without installing the package:
+
+```bash
+# Standalone
+python pdf_stuff/pdfdiff.py one.pdf two.pdf --output="one-vs-two.pdf"
+```
 
 # Usage
 

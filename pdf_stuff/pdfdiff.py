@@ -172,3 +172,7 @@ def compare_pdfs(path_a, path_b, dpi=300, **kwargs):
         out_page.insert_image(rect, stream=result)
 
     return ret
+
+
+if __name__ == "__main__":
+    main()
