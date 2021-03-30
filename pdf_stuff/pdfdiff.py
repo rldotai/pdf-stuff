@@ -72,7 +72,6 @@ def main(argv=None):
         help="Logging verbosity",
     )
 
-
     # Actually parse the arguments
     args = vars(parser.parse_args(argv))
 
