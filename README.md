@@ -2,6 +2,13 @@
 
 Scripts for working with PDFs-- comparing PDFs, extracting glyphs, that sort of thing.
 
+Provides:
+
+- `pdfdiff.py`
+    - A script for identifying differences in PDFs by comparing them page by page as images.
+- `pdf2text.py`
+    - A script for extracting the text from a PDF.
+
 ## Installation
 
 I haven't yet uploaded this to PyPI, but you can still clone the repo and install it thus:
@@ -35,23 +42,6 @@ pdfdiff.py one.pdf another.pdf
 pdfdiff.py --help
 ```
 
-## pdf2text.py
-
-Extract the text from a PDF.
-
-Note that this does not (currently) perform any OCR nor attempt to handle any weird glyph shenanigans; it is essentially equivalent to copy-and-pasting text from a PDF that you've opened up in a PDF viewer.
-
-```bash
-# Extract the text from `file.pdf` and save as `file.pdf.txt`
-pdf2text.py file.pdf --output=file.pdf.txt
-
-# If output unspecified, it will print to stdout
-pdf2text.py file.pdf
-
-# Use the `pdfplumber` backend
-pdf2text.py file.pdf --backend=pdfplumber
-```
-
 ### Example
 
 I created a few PDFs using [my `makedown` project](https://github.com/rldotai/makedown), which is basically a Makefile that wraps `pandoc`.
@@ -68,6 +58,24 @@ The results are mostly identical, except for the lists, which use a consistent b
 A | B | Diff
 :--:|:---:|:---:
 ![PDF difference](resources/pandoc-list.png) | ![PDF difference](resources/cool-list.png) | ![PDF difference](resources/diff-list.png)
+
+
+## pdf2text.py
+
+Extract the text from a PDF.
+
+Note that this does not (currently) perform any OCR nor attempt to handle any weird glyph shenanigans; it is essentially equivalent to copy-and-pasting text from a PDF that you've opened up in a PDF viewer.
+
+```bash
+# Extract the text from `file.pdf` and save as `file.pdf.txt`
+pdf2text.py file.pdf --output=file.pdf.txt
+
+# If output unspecified, it will print to stdout
+pdf2text.py file.pdf
+
+# Use the `pdfplumber` backend
+pdf2text.py file.pdf --backend=pdfplumber
+```
 
 
 # TODO
