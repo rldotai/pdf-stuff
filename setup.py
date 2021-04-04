@@ -47,7 +47,7 @@ setup(
     entry_points={
         "console_scripts": [
             "pdfdiff.py = pdf_stuff.pdfdiff:main",
-            "pdf2txt.py = pdf_stuff.pdf2txt:main",
+            "pdf2text.py = pdf_stuff.pdf2text:main",
         ],
     },
     classifiers=[

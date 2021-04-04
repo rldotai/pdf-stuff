@@ -35,7 +35,7 @@ pdfdiff.py one.pdf another.pdf
 pdfdiff.py --help
 ```
 
-## pdf2txt.py
+## pdf2text.py
 
 Extract the text from a PDF.
 
@@ -43,13 +43,13 @@ Note that this does not (currently) perform any OCR nor attempt to handle any we
 
 ```bash
 # Extract the text from `file.pdf` and save as `file.pdf.txt`
-pdf2txt.py file.pdf --output=file.pdf.txt
+pdf2text.py file.pdf --output=file.pdf.txt
 
 # If output unspecified, it will print to stdout
-pdf2txt.py file.pdf
+pdf2text.py file.pdf
 
 # Use the `pdfplumber` backend
-pdf2txt.py file.pdf --backend=pdfplumber
+pdf2text.py file.pdf --backend=pdfplumber
 ```
 
 ### Example
