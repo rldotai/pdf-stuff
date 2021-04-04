@@ -1,3 +1,6 @@
+"""
+Compare PDFs to identify differences and produce a new PDF for the diff.
+"""
 import argparse
 import io
 import logging
@@ -21,7 +24,7 @@ except ModuleNotFoundError:
 def main(argv=None):
     """Parse arguments (or use supplied `argv`) and run the script."""
     # Define the argument parser
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "pdf_1",
         type=argparse.FileType("r"),

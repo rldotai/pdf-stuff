@@ -35,6 +35,23 @@ pdfdiff.py one.pdf another.pdf
 pdfdiff.py --help
 ```
 
+## pdf2txt.py
+
+Extract the text from a PDF.
+
+Note that this does not (currently) perform any OCR nor attempt to handle any weird glyph shenanigans; it is essentially equivalent to copy-and-pasting text from a PDF that you've opened up in a PDF viewer.
+
+```bash
+# Extract the text from `file.pdf` and save as `file.pdf.txt`
+pdf2txt.py file.pdf --output=file.pdf.txt
+
+# If output unspecified, it will print to stdout
+pdf2txt.py file.pdf
+
+# Use the `pdfplumber` backend
+pdf2txt.py file.pdf --backend=pdfplumber
+```
+
 ### Example
 
 I created a few PDFs using [my `makedown` project](https://github.com/rldotai/makedown), which is basically a Makefile that wraps `pandoc`.
@@ -65,10 +82,12 @@ Move the following from scattered notebooks into this repo:
 
 ## Improvements
 
-- [ ] More options for `pdfdiff.py`
+- [ ] More options for `pdfdiff.py` and `pdf2txt.py`
     - Handle page ranges
+- [ ] Options specific to `pdfdiff.py`
     - Omit pages that are identical
     - Handle pages of different sizes but same aspect ratio
     - Implement more diff algorithms
 - [ ] Add debug logging to `pdfdiff.py`
 - [ ] Image (rather than PDF) output for `pdfdiff.py`
+- [ ] Allow for custom page separator in `pdf2txt.py`?
