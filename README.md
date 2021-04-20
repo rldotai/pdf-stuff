@@ -77,6 +77,18 @@ pdf2text.py file.pdf
 pdf2text.py file.pdf --backend=pdfplumber
 ```
 
+## pdfmeta.py
+
+Print metadata from the PDF.
+May eventually support modifying the metadata as well.
+
+```bash
+# Default, with date parsing and colored output
+pdfmeta.py file.pdf
+
+# Verbatim, no colored output
+pdfmeta.py --verbatim file.pdf
+```
 
 # TODO
 
@@ -99,3 +111,7 @@ Move the following from scattered notebooks into this repo:
 - [ ] Add debug logging to `pdfdiff.py`
 - [ ] Image (rather than PDF) output for `pdfdiff.py`
 - [ ] Allow for custom page separator in `pdf2txt.py`?
+- [ ] `pdfmeta.py`
+    - Allow setting metadata
+    - Are there additional things that count as metadata we should look for?
+
