@@ -48,6 +48,7 @@ setup(
         "console_scripts": [
             "pdfdiff.py = pdf_stuff.pdfdiff:main",
             "pdf2text.py = pdf_stuff.pdf2text:main",
+            "pdfmeta.py = pdf_stuff.pdfmeta:main",
         ],
     },
     classifiers=[

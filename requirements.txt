@@ -3,3 +3,6 @@ numpy>=1.19.2
 pdfplumber>=0.5.27
 Pillow>=8.1.2
 PyMuPDF>=1.18.10
+reportlab>=3.5.67
+rich>=9.13.0
+pendulum>=2.1.2
