@@ -37,7 +37,7 @@ setup(
     license="BSD",
     author="rldotai",
     author_email="rldotai@users.noreply.github.com",
-    description="Parse a document for links, and create archived copies of them.",
+    description="Scripts and such for working with PDFs.",
     long_description=__doc__,
     packages=find_packages(exclude=["tests"]),
     include_package_data=True,
